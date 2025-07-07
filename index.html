@@ -4,113 +4,215 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dulaj Peiris | Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            heading: ['Poppins', 'sans-serif'],
-            body: ['Inter', 'sans-serif'],
-          },
-          colors: {
-            primary: '#0066ff',
-            accent: '#00d9ff',
-          },
-        },
-      },
-    }
-  </script>
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    :root {
+      --primary: #0066ff;
+      --dark: #0d0d0d;
+      --light: #f8f8f8;
+      --accent: #00d9ff;
+      --heading-font: "Poppins", sans-serif;
+      --body-font: "Inter", sans-serif;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: var(--body-font);
+      color: var(--dark);
+      background: var(--light);
+      line-height: 1.6;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      z-index: 1000;
+    }
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 10px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-family: var(--heading-font);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    #nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+    #nav-links a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    #nav-links a:hover {
+      color: var(--primary);
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: var(--dark);
+      margin: 4px 0;
+      transition: all 0.3s;
+    }
+    section {
+      padding: 80px 5%;
+    }
+    section h2 {
+      font-family: var(--heading-font);
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding-top: 60px;
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url("hero.jpg") center/cover no-repeat;
+      color: #fff;
+    }
+    .hero h1 {
+      font-family: var(--heading-font);
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      border-radius: 50px;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+    .btn:hover {
+      background: var(--accent);
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .project-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+    }
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .project-card .content {
+      padding: 1rem;
+    }
+    .project-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .tags {
+      margin-top: 0.75rem;
+      font-size: 0.8rem;
+      color: var(--primary);
+    }
+  </style>
 </head>
-<body class="font-body text-gray-900 bg-gray-50">
-  <!-- Header -->
-  <header class="fixed w-full bg-white shadow z-50">
-    <nav class="max-w-6xl mx-auto flex items-center justify-between p-4">
-      <div class="text-xl font-heading font-bold text-primary">Dulaj Peiris</div>
-      <ul class="hidden md:flex gap-6 font-medium">
-        <li><a href="#home" class="hover:text-primary">Home</a></li>
-        <li><a href="#about" class="hover:text-primary">About</a></li>
-        <li><a href="#projects" class="hover:text-primary">Projects</a></li>
-        <li><a href="#contact" class="hover:text-primary">Contact</a></li>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Dulaj Peiris</div>
+      <ul id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
+      <div class="hamburger" onclick="toggleMenu()">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
     </nav>
   </header>
 
-  <!-- Hero -->
-  <section id="home" class="h-screen flex flex-col justify-center items-center text-white text-center bg-cover bg-center" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('hero.jpg');">
-    <h1 class="text-4xl md:text-6xl font-heading mb-4">Dulaj Peiris</h1>
-    <p class="text-lg md:text-2xl mb-6">Electronic & Telecommunication Engineer</p>
-    <a href="#projects" class="bg-primary hover:bg-accent transition text-white font-semibold py-2 px-6 rounded-full">View My Work</a>
+  <section class="hero" id="home">
+    <h1>Dulaj Peiris</h1>
+    <p>Electronic &amp; Telecommunication Engineer</p>
+    <a href="#projects" class="btn">View My Work</a>
   </section>
 
-  <!-- About -->
-  <section id="about" class="py-20 px-4">
-    <h2 class="text-3xl font-heading text-center text-primary mb-12">About Me</h2>
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 items-center">
-      <img src="profile.jpg" alt="Profile picture" class="w-72 rounded-xl shadow-lg" />
-      <div class="text-lg space-y-4">
-        <p>Hello! I'm Dulaj, an Electronic & Telecommunication Engineering graduate with a passion for IoT systems, firmware development, and VLSI design. I love building smart devices that solve real‑world problems.</p>
-        <p>My interests include embedded systems, FPGA/ASIC design, and developing assistive technology such as my ongoing smart wearable for the deaf.</p>
-        <p>Outside work, you'll find me exploring new tech trends or sharing knowledge on my YouTube channel.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="py-20 px-4 bg-white">
-    <h2 class="text-3xl font-heading text-center text-primary mb-12">Projects</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
-      <!-- Project Card 1 -->
-      <div class="bg-white rounded-lg shadow hover:shadow-md transition overflow-hidden animate__animated animate__fadeInUp animate__delay-1s">
-        <img src="smartwatch.jpg" alt="Smartwatch project" class="w-full h-48 object-cover" />
-        <div class="p-4">
-          <h3 class="text-xl font-semibold mb-2">Smart Wearable for Deaf Individuals</h3>
-          <p class="text-sm text-gray-700">An ESP32-based device providing real-time visual & haptic notifications of public announcements, with indoor localization.</p>
-          <p class="mt-2 text-sm text-primary">ESP32 • MQTT • Node-RED • Trilateration</p>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card animate__animated animate__fadeInUp animate__delay-1s">
+        <img src="smartwatch.jpg" alt="Smartwatch project" />
+        <div class="content">
+          <h3>Smart Wearable for Deaf Individuals</h3>
+          <p>ESP32‑based device with haptic feedback and MQTT.</p>
+          <div class="tags">ESP32 • MQTT • Node‑RED</div>
         </div>
       </div>
-      <!-- Project Card 2 -->
-      <div class="bg-white rounded-lg shadow hover:shadow-md transition overflow-hidden animate__animated animate__fadeInUp animate__delay-2s">
-        <img src="vlsi.jpg" alt="ASIC Design" class="w-full h-48 object-cover" />
-        <div class="p-4">
-          <h3 class="text-xl font-semibold mb-2">Matrix-Vector Multiplier ASIC</h3>
-          <p class="text-sm text-gray-700">Designed and simulated a high-performance ASIC using Synopsys tools for VLSI workflows.</p>
-          <p class="mt-2 text-sm text-primary">SystemVerilog • Synopsys • VLSI</p>
+      <div class="project-card animate__animated animate__fadeInUp animate__delay-2s">
+        <img src="vlsi.jpg" alt="ASIC Design" />
+        <div class="content">
+          <h3>Matrix‑Vector Multiplier ASIC</h3>
+          <p>Designed and simulated using Synopsys tools.</p>
+          <div class="tags">SystemVerilog • Synopsys • VLSI</div>
         </div>
       </div>
-      <!-- Project Card 3 -->
-      <div class="bg-white rounded-lg shadow hover:shadow-md transition overflow-hidden animate__animated animate__fadeInUp animate__delay-3s">
-        <img src="solar.jpg" alt="Solar analysis" class="w-full h-48 object-cover" />
-        <div class="p-4">
-          <h3 class="text-xl font-semibold mb-2">5 kW Solar System Sizing Tool</h3>
-          <p class="text-sm text-gray-700">A MATLAB/Simulink model and dashboard to help homeowners evaluate PV installations based on consumption.</p>
-          <p class="mt-2 text-sm text-primary">Simulink • MATLAB • Renewables</p>
+      <div class="project-card animate__animated animate__fadeInUp animate__delay-3s">
+        <img src="solar.jpg" alt="Solar Tool" />
+        <div class="content">
+          <h3>5 kW Solar System Sizing Tool</h3>
+          <p>Simulink model to evaluate solar system feasibility.</p>
+          <div class="tags">Simulink • MATLAB • Renewables</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="py-20 px-4">
-    <h2 class="text-3xl font-heading text-center text-primary mb-8">Contact</h2>
-    <p class="text-center text-lg">Interested in collaborating or just want to say hi?<br />Reach me at <a href="mailto:dulajpeiris@email.com" class="text-primary underline">dulajpeiris@email.com</a> or find me on:</p>
-    <div class="flex justify-center gap-6 mt-6 text-primary text-2xl">
-      <a href="https://github.com/dulajpeiris" aria-label="GitHub"><i class="fab fa-github"></i></a>
-      <a href="https://linkedin.com/in/dulajpeiris" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="text-center text-sm text-gray-500 py-6">
-    &copy; <span id="year"></span> Dulaj Peiris. All rights reserved.
-  </footer>
-
-  <!-- Scripts -->
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    function toggleMenu() {
+      const nav = document.getElementById("nav-links");
+      const burger = document.querySelector(".hamburger");
+      nav.classList.toggle("show");
+      burger.classList.toggle("active");
+    }
   </script>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
