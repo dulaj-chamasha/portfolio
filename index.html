@@ -8,7 +8,7 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
   <style>
-    : root {
+    :root {
       --primary: #0066ff;
       --dark: #0d0d0d;
       --light: #f8f8f8;
@@ -78,13 +78,13 @@
       margin: 4px 0;
       transition: all 0.3s;
     }
-    hamburger. active line1 {
+    .hamburger.active .line1 {
       transform: rotate(-45deg) translate(-5px, 6px);
     }
-    hamburger. active line2 {
+    .hamburger.active .line2 {
       opacity: 0;
     }
-    hamburger. active line3 {
+    .hamburger.active .line3 {
       transform: rotate(45deg) translate(-5px, -6px);
     }
     /* ========= Hero ========= */
@@ -92,9 +92,9 @@
       height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: centre;
-      align-items: centre;
-      text-align: centre;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
       padding-top: 60px; /* offset for fixed header */
       background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url("hero.jpg") center/cover no-repeat;
       color: #fff;
@@ -120,7 +120,7 @@
       text-decoration: none;
       transition: background 0.2s;
     }
-    .btn: hover {
+    .btn:hover {
       background: var(--accent);
     }
     /* ========= Sections ========= */
@@ -132,14 +132,14 @@
       font-size: 2rem;
       color: var(--primary);
       margin-bottom: 1.5rem;
-      text-align: centre;
+      text-align: center;
     }
     /* About */
     #about {
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
-      justify-content: centre;
+      justify-content: center;
       max-width: 1100px;
       margin: auto;
     }
@@ -148,7 +148,7 @@
       max-width: 300px;
       border-radius: 12px;
     }
-    #about text {
+    #about .text {
       flex: 2 1 400px;
       font-size: 1rem;
     }
@@ -193,25 +193,25 @@
     }
     /* Contact */
     #contact p {
-      text-align: centre;
+      text-align: center;
     }
     .socials {
       display: flex;
       gap: 1rem;
-      justify-content: centre;
+      justify-content: center;
       margin-top: 1rem;
     }
     .socials a {
       color: var(--primary);
       font-size: 1.5rem;
-      transition: colour 0.2s;
+      transition: color 0.2s;
     }
-    .socials a: hover {
+    .socials a:hover {
       color: var(--accent);
     }
     /* Footer */
     footer {
-      text-align: centre;
+      text-align: center;
       padding: 20px 5%;
       background: #fafafa;
       font-size: 0.9rem;
@@ -230,7 +230,7 @@
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
         transition: right 0.3s;
       }
-      #nav-links. show {
+      #nav-links.show {
         right: 5%;
       }
       .hamburger {
